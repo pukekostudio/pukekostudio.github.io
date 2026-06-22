@@ -340,6 +340,30 @@ document.addEventListener('touchend',e=>{
   if(dx<-50)go(cur+1);
   if(dx>50)go(cur-1);
 },{passive:true});
+  // horizontal scroll / trackpad swipe
+let wheelLocked = false;
+
+document.addEventListener('wheel', e => {
+  const horizontalAmount = e.shiftKey ? e.deltaY : e.deltaX;
+  const isHorizontal = Math.abs(horizontalAmount) > Math.abs(e.deltaY) || e.shiftKey;
+
+  if (!isHorizontal) return;
+  if (Math.abs(horizontalAmount) < 30) return;
+  if (wheelLocked) return;
+
+  e.preventDefault();
+
+  if (horizontalAmount > 0) {
+    go(cur + 1);
+  } else {
+    go(cur - 1);
+  }
+
+  wheelLocked = true;
+  setTimeout(() => {
+    wheelLocked = false;
+  }, 850);
+}, { passive: false });
 </script>
 </body>
 </html>
