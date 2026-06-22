@@ -72,10 +72,6 @@ a{color:inherit;text-decoration:none}
 
 /* PROGRESS DOTS */
 .dots{
-position:absolute;
-top:0;
-left:50%;
-transform:translateX(-50%);
 display:flex;
 justify-content:center;
 align-items:center;
@@ -102,31 +98,37 @@ left:0;
 right:0;
 z-index:55;
 padding:18px 48px 20px;
+pointer-events:none;
+text-align:center;
+background:linear-gradient(transparent,rgba(10,10,10,.92) 38%);
+}
+
+.footer-inner{
+width:min(920px,86vw);
+margin:0 auto;
 display:flex;
 flex-direction:column;
 align-items:center;
 justify-content:center;
-gap:14px;
-text-align:center;
-pointer-events:none;
-background:linear-gradient(transparent,rgba(10,10,10,.92) 36%);
+gap:12px;
 }
 
-footer a{pointer-events:auto}
+footer a,
+.dots{
+pointer-events:auto;
+}
 
 .foot-cols{
-width:min(920px,86vw);
+width:100%;
 display:grid;
 grid-template-columns:repeat(3,1fr);
 align-items:start;
 justify-content:center;
-margin:0 auto;
+gap:0;
 }
 
 .foot-col{
-position:relative;
 min-width:0;
-padding-top:24px;
 display:flex;
 flex-direction:column;
 align-items:center;
@@ -157,11 +159,15 @@ white-space:nowrap;
 text-align:center;
 }
 
-.foot-col a{transition:color .3s}
-.foot-col a:hover{color:var(--accent)}
+.foot-col a{
+transition:color .3s;
+}
+
+.foot-col a:hover{
+color:var(--accent);
+}
 
 .foot-right{
-width:100%;
 display:flex;
 flex-direction:column;
 align-items:center;
@@ -190,7 +196,9 @@ white-space:nowrap;
 text-align:center;
 }
 
-.mobile-only{display:none}
+.mobile-only{
+display:none;
+}
 
 @media(max-width:768px){
 .arrow.prev{left:16px}
@@ -207,23 +215,17 @@ right:24px;
 }
 
 footer{
-padding:8px 8px calc(9px + env(safe-area-inset-bottom));
-gap:5px;
-background:linear-gradient(transparent,rgba(10,10,10,.94) 26%);
+padding:8px 10px calc(9px + env(safe-area-inset-bottom));
+background:linear-gradient(transparent,rgba(10,10,10,.94) 28%);
 }
 
-.foot-cols{
+.footer-inner{
 width:100%;
-grid-template-columns:repeat(3,1fr);
-}
-
-.foot-col{
-padding-top:18px;
+gap:6px;
 }
 
 .dots{
-top:0;
-gap:6px;
+gap:7px;
 }
 
 .dot{
@@ -231,15 +233,21 @@ width:5px;
 height:5px;
 }
 
+.foot-cols{
+grid-template-columns:repeat(3,1fr);
+width:100%;
+}
+
 .foot-col h5{
-font-size:.34rem;
-letter-spacing:.04em;
+font-size:.38rem;
+letter-spacing:.045em;
 margin-bottom:4px;
+line-height:1;
 }
 
 .foot-col a,
 .foot-col p{
-font-size:.42rem;
+font-size:.45rem;
 line-height:1.1;
 }
 
@@ -248,12 +256,17 @@ width:24px;
 }
 
 .foot-copy{
-font-size:.38rem;
+font-size:.37rem;
 letter-spacing:.01em;
 }
 
-.desktop-only{display:none}
-.mobile-only{display:inline}
+.desktop-only{
+display:none;
+}
+
+.mobile-only{
+display:inline;
+}
 
 .tagline{
 font-size:1.05rem;
@@ -262,13 +275,13 @@ font-size:1.05rem;
 
 @media(max-width:390px){
 .foot-col h5{
-font-size:.31rem;
+font-size:.34rem;
 letter-spacing:.025em;
 }
 
 .foot-col a,
 .foot-col p{
-font-size:.39rem;
+font-size:.41rem;
 }
 
 .foot-logo img{
@@ -276,7 +289,7 @@ width:22px;
 }
 
 .foot-copy{
-font-size:.35rem;
+font-size:.34rem;
 }
 } </style>
 
@@ -365,43 +378,49 @@ font-size:.35rem;
 <!-- FOOTER -->
 
 <footer>
-  <div class="foot-cols">
-    <div class="foot-col">
-      <h5>Follow</h5>
-      <a href="https://www.instagram.com/pukeko_studio/" target="_blank">Instagram</a>
+  <div class="footer-inner">
+    <div class="dots" id="dots">
+      <div class="dot active" data-i="0"></div>
+      <div class="dot" data-i="1"></div>
+      <div class="dot" data-i="2"></div>
+      <div class="dot" data-i="3"></div>
     </div>
 
 ```
-<div class="foot-col">
-  <div class="dots" id="dots">
-    <div class="dot active" data-i="0"></div>
-    <div class="dot" data-i="1"></div>
-    <div class="dot" data-i="2"></div>
-    <div class="dot" data-i="3"></div>
+<div class="foot-cols">
+  <div class="foot-col">
+    <h5>Follow</h5>
+    <a href="https://www.instagram.com/pukeko_studio/" target="_blank">Instagram</a>
   </div>
-  <h5>Working Hour</h5>
-  <p>
-    <span class="desktop-only">Tuesday–Saturday by appointment</span>
-    <span class="mobile-only">Tue–Sat</span>
-  </p>
+
+  <div class="foot-col">
+    <h5>Working Hour</h5>
+    <p>
+      <span class="desktop-only">Tuesday–Saturday by appointment</span>
+      <span class="mobile-only">Tue–Sat</span>
+    </p>
+  </div>
+
+  <div class="foot-col">
+    <h5>
+      <span class="desktop-only">Partnership Company</span>
+      <span class="mobile-only">Partnership</span>
+    </h5>
+    <a href="https://www.instagram.com/tiny_signs/" target="_blank">
+      <span class="desktop-only">Tiny Sign Wellington</span>
+      <span class="mobile-only">Tiny Sign</span>
+    </a>
+  </div>
 </div>
 
-<div class="foot-col">
-  <h5>Partnership</h5>
-  <a href="https://www.instagram.com/tiny_signs/" target="_blank">
-    <span class="desktop-only">Tiny Sign Wellington</span>
-    <span class="mobile-only">Tiny Sign</span>
-  </a>
+<div class="foot-right">
+  <div class="foot-logo">
+    <img src="Logo AWPO.png" alt="Pūkeko Studio logo">
+  </div>
+  <div class="foot-copy">&copy; Pūkeko Studio 2026</div>
 </div>
 ```
 
-  </div>
-
-  <div class="foot-right">
-    <div class="foot-logo">
-      <img src="Logo AWPO.png" alt="Pūkeko Studio logo">
-    </div>
-    <div class="foot-copy">&copy; Pūkeko Studio 2026</div>
   </div>
 </footer>
 
