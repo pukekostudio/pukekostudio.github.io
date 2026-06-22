@@ -1,5 +1,4 @@
 <!DOCTYPE html>
-
 <html lang="en">
 <head>
 <meta charset="UTF-8">
@@ -72,11 +71,11 @@ a{color:inherit;text-decoration:none}
 
 /* PROGRESS DOTS */
 .dots{
-display:flex;
-justify-content:center;
-align-items:center;
-gap:10px;
-pointer-events:auto;
+  display:flex;
+  justify-content:center;
+  align-items:center;
+  gap:10px;
+  pointer-events:auto;
 }
 .dot{width:7px;height:7px;border-radius:50%;background:var(--muted);cursor:pointer;transition:all .4s}
 .dot.active{background:var(--accent);transform:scale(1.3)}
@@ -92,207 +91,207 @@ pointer-events:auto;
 
 /* FOOTER */
 footer{
-position:fixed;
-bottom:0;
-left:0;
-right:0;
-z-index:55;
-padding:18px 48px 20px;
-pointer-events:none;
-text-align:center;
-background:linear-gradient(transparent,rgba(10,10,10,.92) 38%);
+  position:fixed;
+  bottom:0;
+  left:0;
+  right:0;
+  z-index:55;
+  padding:18px 48px 20px;
+  pointer-events:none;
+  text-align:center;
+  background:linear-gradient(transparent,rgba(10,10,10,.92) 38%);
 }
 
 .footer-inner{
-width:min(920px,86vw);
-margin:0 auto;
-display:flex;
-flex-direction:column;
-align-items:center;
-justify-content:center;
-gap:12px;
+  width:min(920px,86vw);
+  margin:0 auto;
+  display:flex;
+  flex-direction:column;
+  align-items:center;
+  justify-content:center;
+  gap:12px;
 }
 
 footer a,
 .dots{
-pointer-events:auto;
+  pointer-events:auto;
 }
 
 .foot-cols{
-width:100%;
-display:grid;
-grid-template-columns:repeat(3,1fr);
-align-items:start;
-justify-content:center;
-gap:0;
+  width:100%;
+  display:grid;
+  grid-template-columns:repeat(3,1fr);
+  align-items:start;
+  justify-content:center;
+  gap:0;
 }
 
 .foot-col{
-min-width:0;
-display:flex;
-flex-direction:column;
-align-items:center;
-justify-content:flex-start;
-text-align:center;
+  min-width:0;
+  display:flex;
+  flex-direction:column;
+  align-items:center;
+  justify-content:flex-start;
+  text-align:center;
 }
 
 .foot-col h5{
-display:block;
-font-size:.6rem;
-font-weight:500;
-letter-spacing:.18em;
-text-transform:uppercase;
-color:var(--accent);
-margin-bottom:10px;
-line-height:1;
-white-space:nowrap;
+  display:block;
+  font-size:.6rem;
+  font-weight:500;
+  letter-spacing:.18em;
+  text-transform:uppercase;
+  color:var(--accent);
+  margin-bottom:10px;
+  line-height:1;
+  white-space:nowrap;
 }
 
 .foot-col a,
 .foot-col p{
-display:block;
-font-size:.78rem;
-font-weight:300;
-line-height:1.25;
-color:var(--text);
-white-space:nowrap;
-text-align:center;
+  display:block;
+  font-size:.78rem;
+  font-weight:300;
+  line-height:1.25;
+  color:var(--text);
+  white-space:nowrap;
+  text-align:center;
 }
 
 .foot-col a{
-transition:color .3s;
+  transition:color .3s;
 }
 
 .foot-col a:hover{
-color:var(--accent);
+  color:var(--accent);
 }
 
 .foot-right{
-display:flex;
-flex-direction:column;
-align-items:center;
-justify-content:center;
-gap:5px;
+  display:flex;
+  flex-direction:column;
+  align-items:center;
+  justify-content:center;
+  gap:5px;
 }
 
 .foot-logo{
-display:flex;
-align-items:center;
-justify-content:center;
+  display:flex;
+  align-items:center;
+  justify-content:center;
 }
 
 .foot-logo img{
-width:40px;
-height:auto;
-display:block;
+  width:40px;
+  height:auto;
+  display:block;
 }
 
 .foot-copy{
-font-size:.58rem;
-color:var(--muted);
-font-weight:300;
-letter-spacing:.04em;
-white-space:nowrap;
-text-align:center;
+  font-size:.58rem;
+  color:var(--muted);
+  font-weight:300;
+  letter-spacing:.04em;
+  white-space:nowrap;
+  text-align:center;
 }
 
 .mobile-only{
-display:none;
+  display:none;
 }
 
 @media(max-width:768px){
-.arrow.prev{left:16px}
-.arrow.next{right:16px}
-.arrow{width:46px;height:46px}
+  .arrow.prev{left:16px}
+  .arrow.next{right:16px}
+  .arrow{width:46px;height:46px}
 
-.brand-mini{
-left:24px;
-font-size:1.1rem;
-}
+  .brand-mini{
+    left:24px;
+    font-size:1.1rem;
+  }
 
-.counter{
-right:24px;
-}
+  .counter{
+    right:24px;
+  }
 
-footer{
-padding:8px 10px calc(9px + env(safe-area-inset-bottom));
-background:linear-gradient(transparent,rgba(10,10,10,.94) 28%);
-}
+  footer{
+    padding:8px 10px calc(9px + env(safe-area-inset-bottom));
+    background:linear-gradient(transparent,rgba(10,10,10,.94) 28%);
+  }
 
-.footer-inner{
-width:100%;
-gap:6px;
-}
+  .footer-inner{
+    width:100%;
+    gap:6px;
+  }
 
-.dots{
-gap:7px;
-}
+  .dots{
+    gap:7px;
+  }
 
-.dot{
-width:5px;
-height:5px;
-}
+  .dot{
+    width:5px;
+    height:5px;
+  }
 
-.foot-cols{
-grid-template-columns:repeat(3,1fr);
-width:100%;
-}
+  .foot-cols{
+    grid-template-columns:repeat(3,1fr);
+    width:100%;
+  }
 
-.foot-col h5{
-font-size:.38rem;
-letter-spacing:.045em;
-margin-bottom:4px;
-line-height:1;
-}
+  .foot-col h5{
+    font-size:.38rem;
+    letter-spacing:.045em;
+    margin-bottom:4px;
+    line-height:1;
+  }
 
-.foot-col a,
-.foot-col p{
-font-size:.45rem;
-line-height:1.1;
-}
+  .foot-col a,
+  .foot-col p{
+    font-size:.45rem;
+    line-height:1.1;
+  }
 
-.foot-logo img{
-width:24px;
-}
+  .foot-logo img{
+    width:24px;
+  }
 
-.foot-copy{
-font-size:.37rem;
-letter-spacing:.01em;
-}
+  .foot-copy{
+    font-size:.37rem;
+    letter-spacing:.01em;
+  }
 
-.desktop-only{
-display:none;
-}
+  .desktop-only{
+    display:none;
+  }
 
-.mobile-only{
-display:inline;
-}
+  .mobile-only{
+    display:inline;
+  }
 
-.tagline{
-font-size:1.05rem;
-}
+  .tagline{
+    font-size:1.05rem;
+  }
 }
 
 @media(max-width:390px){
-.foot-col h5{
-font-size:.34rem;
-letter-spacing:.025em;
-}
+  .foot-col h5{
+    font-size:.34rem;
+    letter-spacing:.025em;
+  }
 
-.foot-col a,
-.foot-col p{
-font-size:.41rem;
-}
+  .foot-col a,
+  .foot-col p{
+    font-size:.41rem;
+  }
 
-.foot-logo img{
-width:22px;
-}
+  .foot-logo img{
+    width:22px;
+  }
 
-.foot-copy{
-font-size:.34rem;
+  .foot-copy{
+    font-size:.34rem;
+  }
 }
-} </style>
-
+</style>
 </head>
 <body>
 
@@ -300,14 +299,12 @@ font-size:.34rem;
 <div class="counter"><b id="curNum">01</b> / 04</div>
 
 <!-- arrows -->
-
 <div class="arrow prev" id="prev"><svg viewBox="0 0 24 24"><path d="M15 18l-6-6 6-6"/></svg></div>
 <div class="arrow next" id="next"><svg viewBox="0 0 24 24"><path d="M9 18l6-6-6-6"/></svg></div>
 
 <div class="slider" id="slider">
 
   <!-- SLIDE 1: LOGO -->
-
   <section class="slide active" data-i="0">
     <div class="top-link"></div>
     <div class="center-block">
@@ -320,7 +317,6 @@ font-size:.34rem;
   </section>
 
   <!-- SLIDE 2: PHOTO -->
-
   <section class="slide" data-i="1">
     <div class="top-link">
       <div class="slide-inner">
@@ -340,11 +336,10 @@ font-size:.34rem;
   </section>
 
   <!-- SLIDE 3: VIDEO -->
-
   <section class="slide" data-i="2">
     <div class="top-link">
       <div class="slide-inner">
-        <a href="https://www.instagram.com/pukeko_studio/reels/" target="_blank">
+        <a href="https://drive.google.com/drive/folders/1fz-D3iqwQtU5neDpbPgR4WWf0_P179yN" target="_blank" rel="noopener noreferrer">
           Watch Videography
           <svg viewBox="0 0 24 24"><path d="M7 17L17 7M17 7H7M17 7v10"/></svg>
         </a>
@@ -360,7 +355,6 @@ font-size:.34rem;
   </section>
 
   <!-- SLIDE 4: CONTACT -->
-
   <section class="slide" data-i="3">
     <div class="top-link"></div>
     <div class="center-block">
@@ -376,7 +370,6 @@ font-size:.34rem;
 </div>
 
 <!-- FOOTER -->
-
 <footer>
   <div class="footer-inner">
     <div class="dots" id="dots">
@@ -386,41 +379,38 @@ font-size:.34rem;
       <div class="dot" data-i="3"></div>
     </div>
 
-```
-<div class="foot-cols">
-  <div class="foot-col">
-    <h5>Follow</h5>
-    <a href="https://www.instagram.com/pukeko_studio/" target="_blank">Instagram</a>
-  </div>
+    <div class="foot-cols">
+      <div class="foot-col">
+        <h5>Follow</h5>
+        <a href="https://www.instagram.com/pukeko_studio/" target="_blank">Instagram</a>
+      </div>
 
-  <div class="foot-col">
-    <h5>Working Hour</h5>
-    <p>
-      <span class="desktop-only">Tuesday–Saturday by appointment</span>
-      <span class="mobile-only">Tue–Sat</span>
-    </p>
-  </div>
+      <div class="foot-col">
+        <h5>Working Hour</h5>
+        <p>
+          <span class="desktop-only">Tuesday–Saturday by appointment</span>
+          <span class="mobile-only">Tue–Sat</span>
+        </p>
+      </div>
 
-  <div class="foot-col">
-    <h5>
-      <span class="desktop-only">Partnership Company</span>
-      <span class="mobile-only">Partnership</span>
-    </h5>
-    <a href="https://www.instagram.com/tiny_signs/" target="_blank">
-      <span class="desktop-only">Tiny Sign Wellington</span>
-      <span class="mobile-only">Tiny Sign</span>
-    </a>
-  </div>
-</div>
+      <div class="foot-col">
+        <h5>
+          <span class="desktop-only">Partnership Company</span>
+          <span class="mobile-only">Partnership</span>
+        </h5>
+        <a href="https://www.instagram.com/tiny_signs/" target="_blank">
+          <span class="desktop-only">Tiny Sign Wellington</span>
+          <span class="mobile-only">Tiny Sign</span>
+        </a>
+      </div>
+    </div>
 
-<div class="foot-right">
-  <div class="foot-logo">
-    <img src="Logo AWPO.png" alt="Pūkeko Studio logo">
-  </div>
-  <div class="foot-copy">&copy; Pūkeko Studio 2026</div>
-</div>
-```
-
+    <div class="foot-right">
+      <div class="foot-logo">
+        <img src="Logo AWPO.png" alt="Pūkeko Studio logo">
+      </div>
+      <div class="foot-copy">&copy; Pūkeko Studio 2026</div>
+    </div>
   </div>
 </footer>
 
@@ -484,6 +474,5 @@ document.addEventListener('wheel', e => {
   }, 850);
 }, { passive: false });
 </script>
-
 </body>
 </html>
