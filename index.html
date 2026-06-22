@@ -70,7 +70,13 @@ a{color:inherit;text-decoration:none}
 .arrow.next:hover svg{transform:translateX(3px)}
 
 /* PROGRESS DOTS */
-.dots{position:fixed;bottom:120px;left:50%;transform:translateX(-50%);z-index:50;display:flex;gap:14px}
+.dots{
+  display:flex;
+  justify-content:center;
+  align-items:center;
+  gap:14px;
+  pointer-events:auto;
+}
 .dot{width:7px;height:7px;border-radius:50%;background:var(--muted);cursor:pointer;transition:all .4s}
 .dot.active{background:var(--accent);transform:scale(1.3)}
 
@@ -90,12 +96,12 @@ footer{
   left:0;
   right:0;
   z-index:55;
-  padding:26px 48px 30px;
+  padding:18px 48px 22px;
   display:flex;
   flex-direction:column;
   justify-content:center;
   align-items:center;
-  gap:22px;
+  gap:16px;
   background:linear-gradient(transparent,rgba(10,10,10,.88) 40%);
   pointer-events:none;
   text-align:center;
@@ -104,32 +110,45 @@ footer{
 footer a{pointer-events:auto}
 
 .foot-cols{
-  display:flex;
+  display:grid;
+  grid-template-columns:repeat(3, minmax(210px, 1fr));
   justify-content:center;
-  align-items:flex-start;
-  gap:72px;
+  align-items:start;
+  gap:48px;
   width:100%;
-  max-width:920px;
+  max-width:980px;
 }
 
 .foot-col{
-  min-width:170px;
+  display:flex;
+  flex-direction:column;
+  align-items:center;
+  justify-content:flex-start;
+  min-width:0;
 }
 
 .foot-col h5{
+  height:12px;
+  display:flex;
+  align-items:center;
+  justify-content:center;
   font-size:.6rem;
   font-weight:500;
   letter-spacing:.18em;
   text-transform:uppercase;
   color:var(--accent);
-  margin-bottom:10px;
+  margin-bottom:12px;
+  white-space:nowrap;
 }
 
 .foot-col a,
 .foot-col p{
+  display:block;
   font-size:.78rem;
   font-weight:300;
+  line-height:1.2;
   color:var(--text);
+  white-space:nowrap;
 }
 
 .foot-col a{
@@ -145,54 +164,39 @@ footer a{pointer-events:auto}
   flex-direction:column;
   align-items:center;
   justify-content:center;
-  gap:0;
+  gap:8px;
 }
 
 .foot-logo{
   display:flex;
   align-items:center;
   justify-content:center;
-  gap:8px;
 }
 
-.foot-logo svg,
 .foot-logo img{
-  width:34px;
+  width:44px;
   height:auto;
-}
-
-.foot-logo-text{
-  display:flex;
-  flex-direction:column;
-  line-height:1;
-  align-items:flex-start;
-}
-
-.foot-logo-text b{
-  font-size:.85rem;
-  font-weight:600;
-  letter-spacing:.14em;
-}
-
-.foot-logo-text small{
-  font-size:.5rem;
-  letter-spacing:.3em;
-  color:var(--dim);
-  margin-top:2px;
+  display:block;
 }
 
 .foot-copy{
-  display:none;
+  font-size:.62rem;
+  color:var(--muted);
+  font-weight:300;
+  letter-spacing:.04em;
 }
+
 @media(max-width:768px){
   .arrow.prev{left:16px}.arrow.next{right:16px}
   .arrow{width:46px;height:46px}
   .brand-mini{left:24px;font-size:1.1rem}
   .counter{right:24px}
-  .dots{bottom:140px}
-  footer{flex-direction:column;align-items:center;gap:24px;padding:20px 24px;text-align:center}
-  .foot-cols{gap:32px;flex-wrap:wrap;justify-content:center}
-  .foot-right{align-items:center}
+  footer{gap:16px;padding:20px 24px 22px;text-align:center}
+  .foot-cols{grid-template-columns:1fr;gap:20px;max-width:100%}
+  .foot-col h5{margin-bottom:8px}
+  .foot-col a,.foot-col p{font-size:.74rem}
+  .foot-logo img{width:40px}
+  .foot-copy{font-size:.58rem}
   .tagline{font-size:1.05rem}
 }
 </style>
@@ -205,14 +209,6 @@ footer a{pointer-events:auto}
 <!-- arrows -->
 <div class="arrow prev" id="prev"><svg viewBox="0 0 24 24"><path d="M15 18l-6-6 6-6"/></svg></div>
 <div class="arrow next" id="next"><svg viewBox="0 0 24 24"><path d="M9 18l6-6-6-6"/></svg></div>
-
-<!-- dots -->
-<div class="dots" id="dots">
-  <div class="dot active" data-i="0"></div>
-  <div class="dot" data-i="1"></div>
-  <div class="dot" data-i="2"></div>
-  <div class="dot" data-i="3"></div>
-</div>
 
 <div class="slider" id="slider">
 
@@ -283,6 +279,13 @@ footer a{pointer-events:auto}
 
 <!-- FOOTER -->
 <footer>
+  <div class="dots" id="dots">
+    <div class="dot active" data-i="0"></div>
+    <div class="dot" data-i="1"></div>
+    <div class="dot" data-i="2"></div>
+    <div class="dot" data-i="3"></div>
+  </div>
+
   <div class="foot-cols">
     <div class="foot-col">
       <h5>Follow</h5>
@@ -297,12 +300,12 @@ footer a{pointer-events:auto}
       <a href="https://www.instagram.com/tiny_signs/" target="_blank">Tiny Sign Wellington</a>
     </div>
   </div>
+
   <div class="foot-right">
     <div class="foot-logo">
-      <img src="Asset 1@3x copy.png" alt="Pūkeko Studio logo" style="width:34px;height:auto;">
-      <div class="foot-logo-text"><b>PŪKEKO</b><small>STUDIO</small></div>
+      <img src="Logo AWPO.png" alt="Pūkeko Studio logo">
     </div>
-    <div class="foot-copy">&copy; 2026 by Pūkeko Studio</div>
+    <div class="foot-copy">&copy; Pūkeko Studio 2026</div>
   </div>
 </footer>
 
