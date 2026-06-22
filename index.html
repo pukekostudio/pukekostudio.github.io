@@ -84,21 +84,106 @@ a{color:inherit;text-decoration:none}
 .counter b{color:var(--text);font-weight:500}
 
 /* FOOTER (fixed bottom bar) */
-footer{position:fixed;bottom:0;left:0;right:0;z-index:55;padding:22px 48px;display:flex;justify-content:space-between;align-items:flex-end;background:linear-gradient(transparent,rgba(10,10,10,.85) 40%);pointer-events:none}
-footer a{pointer-events:auto}
-.foot-cols{display:flex;gap:64px}
-.foot-col h5{font-size:.6rem;font-weight:500;letter-spacing:.18em;text-transform:uppercase;color:var(--accent);margin-bottom:10px}
-.foot-col a,.foot-col p{font-size:.78rem;font-weight:300;color:var(--text)}
-.foot-col a{transition:color .3s}
-.foot-col a:hover{color:var(--accent)}
-.foot-right{display:flex;flex-direction:column;align-items:flex-end;gap:10px}
-.foot-logo{display:flex;align-items:center;gap:8px}
-.foot-logo svg{width:34px;height:auto}
-.foot-logo-text{display:flex;flex-direction:column;line-height:1}
-.foot-logo-text b{font-size:.85rem;font-weight:600;letter-spacing:.14em}
-.foot-logo-text small{font-size:.5rem;letter-spacing:.3em;color:var(--dim);margin-top:2px}
-.foot-copy{font-size:.68rem;color:var(--muted);font-weight:300}
+footer{
+  position:fixed;
+  bottom:0;
+  left:0;
+  right:0;
+  z-index:55;
+  padding:26px 48px 30px;
+  display:flex;
+  flex-direction:column;
+  justify-content:center;
+  align-items:center;
+  gap:22px;
+  background:linear-gradient(transparent,rgba(10,10,10,.88) 40%);
+  pointer-events:none;
+  text-align:center;
+}
 
+footer a{pointer-events:auto}
+
+.foot-cols{
+  display:flex;
+  justify-content:center;
+  align-items:flex-start;
+  gap:72px;
+  width:100%;
+  max-width:920px;
+}
+
+.foot-col{
+  min-width:170px;
+}
+
+.foot-col h5{
+  font-size:.6rem;
+  font-weight:500;
+  letter-spacing:.18em;
+  text-transform:uppercase;
+  color:var(--accent);
+  margin-bottom:10px;
+}
+
+.foot-col a,
+.foot-col p{
+  font-size:.78rem;
+  font-weight:300;
+  color:var(--text);
+}
+
+.foot-col a{
+  transition:color .3s;
+}
+
+.foot-col a:hover{
+  color:var(--accent);
+}
+
+.foot-right{
+  display:flex;
+  flex-direction:column;
+  align-items:center;
+  justify-content:center;
+  gap:0;
+}
+
+.foot-logo{
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  gap:8px;
+}
+
+.foot-logo svg,
+.foot-logo img{
+  width:34px;
+  height:auto;
+}
+
+.foot-logo-text{
+  display:flex;
+  flex-direction:column;
+  line-height:1;
+  align-items:flex-start;
+}
+
+.foot-logo-text b{
+  font-size:.85rem;
+  font-weight:600;
+  letter-spacing:.14em;
+}
+
+.foot-logo-text small{
+  font-size:.5rem;
+  letter-spacing:.3em;
+  color:var(--dim);
+  margin-top:2px;
+}
+
+.foot-copy{
+  display:none;
+}
 @media(max-width:768px){
   .arrow.prev{left:16px}.arrow.next{right:16px}
   .arrow{width:46px;height:46px}
@@ -137,8 +222,6 @@ footer a{pointer-events:auto}
     <div class="center-block">
       <div class="slide-inner">
         <img class="logo-mark" src="Asset 1@3x copy.png" alt="Pūkeko Studio logo">
-        <div class="logo-name">PŪKEKO</div>
-        <div class="logo-sub">Studio</div>
         <p class="tagline">Everything possible with a camera.</p>
       </div>
     </div>
